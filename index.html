@@ -1,199 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <style>body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-header {
-  background-color: #333;
-  color: #fff;
-  padding: 10px;
-}
-
-header h1 {
-  margin: 0;
-}
-
-nav ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-nav li {
-  display: inline;
-  margin-right: 20px;
-}
-
-nav li a {
-  color: #fff;
-  text-decoration: none;
-}
-
-main {
-  padding: 20px;
-}
-
-section {
-  margin-bottom: 30px;
-}
-
-.hero {
-  background-image: url('https://scontent-lga3-2.xx.fbcdn.net/v/t1.6435-9/50314631_2040233219392172_8917844873919332352_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=3iaKdZeTTF0AX8TR-js&_nc_ht=scontent-lga3-2.xx&oh=00_AfBmkTNYIJfLW87oVcye8GR5FZEKnDsXNtj6XVEDLLgcMA&oe=64E50592'); /* Replace with the actual hero image */
-  background-size: cover;
-  background-position: center;
-  min-height: 400px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  text-align: center;
-}
-
-.hero-content {
-  max-width: 800px;
-  padding: 20px;
-}
-
-.hero h2 {
-  font-size: 48px;
-}
-
-.hero p {
-  font-size: 20px;
-  margin-bottom: 20px;
-}
-
-.cta-btn {
-  display: inline-block;
-  background-color: #FF5733;
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.2s;
-}
-
-.cta-btn:hover {
-  background-color: #E64C00;
-}
-
-footer {
-  text-align: center;
-  background-color: #333;
-  color: #fff;
-  padding: 10px;
-}
-
-footer p {
-  margin: 0;
-}
-
-* {
-  text-align: center;
-    }</style>
-  <script>// Smooth scrolling when clicking on navigation links
-const navLinks = document.querySelectorAll('nav li a');
-
-navLinks.forEach(link => {
-  link.addEventListener('click', smoothScroll);
-});
-
-function smoothScroll(event) {
-  event.preventDefault();
-  const targetId = this.getAttribute('href');
-  const targetElement = document.querySelector(targetId);
-  const yOffset = -50; // Adjust this value to set the offset for scrolling position
-  const y = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
-  window.scrollTo({ top: y, behavior: 'smooth' });
-}
-  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AMO Music - Piano Lessons</title>
+  <!-- Add the Bootstrap CSS file -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Add Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <!-- Add Google Fonts for typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <!-- Add custom CSS for enhanced styling -->
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Custom styles for enhanced design */
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background-color: #f8f9fa;
+    }
+    .navbar {
+      background-color: #343a40;
+    }
+    .navbar-brand {
+      font-size: 28px;
+      font-weight: 700;
+      color: #fff;
+    }
+    .navbar-nav .nav-link {
+      color: #fff;
+    }
+    .hero {
+      background-image: url('https://images3.alphacoders.com/118/thumb-1920-118505.jpg');
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      text-align: center;
+      padding: 100px 0;
+    }
+    .hero h1 {
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+    .hero .btn-primary {
+      font-size: 18px;
+      padding: 12px 32px;
+    }
+    section {
+      padding: 60px 0;
+    }
+    section h2 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 30px;
+    }
+    section p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+    footer {
+      background-color: #343a40;
+      color: #fff;
+      padding: 20px 0;
+      font-size: 18px;
+    }
+    /* Custom styles for the "About Ann M Ohern" section */
+    #about {
+      background-color: #f8f9fa;
+    }
+    #about h2 {
+      font-size: 36px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    #about .container {
+      padding: 40px 0;
+    }
+    #about .row {
+      align-items: center;
+    }
+    #about img {
+      max-width: 100%;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <nav>
-      <h1>AMO Music</h1>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#lessons">Lessons</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+    <!-- Add Bootstrap classes to the navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <a class="navbar-brand" href="#">AMO Music</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#lessons">Lessons</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
     </nav>
   </header>
 
   <main>
     <section class="hero" id="home">
-      <div class="hero-content">
-        <h2>Welcome to AMO Music!</h2>
+      <div class="container">
+        <h1>Welcome to AMO Music!</h1>
         <p>Discover the joy of playing the piano with our expert piano lessons.</p>
-        <a href="#lessons" class="cta-btn">Get Started</a>
+        <a href="#lessons" class="btn btn-primary">Get Started</a>
       </div>
     </section>
-    <script>// Smooth scrolling when clicking on navigation links
-const navLinks = document.querySelectorAll('a');
 
-navLinks.forEach(link => {
-  link.addEventListener('click', smoothScroll);
-});
-
-function smoothScroll(event) {
-  event.preventDefault();
-  const targetId = this.getAttribute('href');
-  const targetElement = document.querySelector(targetId);
-  const yOffset = -50; // Adjust this value to set the offset for scrolling position
-  const y = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
-  window.scrollTo({ top: y, behavior: 'smooth' });
-}
-    </script>
     <section id="about">
-      <h2>About Ann M Ohern</h2>
-<p>Meet Ann Marie Ohern, a seasoned and accomplished music teacher hailing from East Hanover, New Jersey. Her musical journey began at a remarkably young age when, at just 10 years old, she took to the stage to sing for thousands of captivated audience members. The performance marked the inception of what would become an extraordinary career in music.</p>
+      <div class="container">
+        <h2>About Ann M Ohern</h2>
+        <div class="row">
 
-<p>One of the defining moments of Ann Marie's early career was her debut alongside the legendary Beverly Sills in the production of "The Ballad of Baby Doe." This experience not only showcased her exceptional talent but also paved the way for her to work with some of the most prominent figures in the music industry.</p>
+          <div>
+            <p>Meet Ann Marie Ohern, a seasoned and accomplished music teacher hailing from East Hanover, New Jersey. Her musical journey began at a remarkably young age when, at just 10 years old, she took to the stage to sing for thousands of captivated audience members. The performance marked the inception of what would become an extraordinary career in music.</p>
+            <!-- Add more content and formatting as needed -->
+            <p>One of the defining moments of Ann Marie's early career was her debut alongside the legendary Beverly Sills in the production of "The Ballad of Baby Doe." This experience not only showcased her exceptional talent but also paved the way for her to work with some of the most prominent figures in the music industry.</p>
+            <p>For half a century, Ann Marie Ohern has been dedicated to the art of teaching music, sharing her passion, knowledge, and expertise with countless students. With a vast array of experiences and insights gained over the years, she has become a true guiding light for aspiring musicians.</p>
+            <p>Throughout her illustrious career, Ann Marie has had the privilege of collaborating with a host of notable personalities, further enriching her musical prowess. Some of the famous names she has worked with include Ann Elgar, a gifted composer; Frances Bible, an outstanding pianist; Lila Herbert, a renowned soprano; Placido Domingo, the iconic opera singer; and Walter Chesterton, a celebrated conductor. These partnerships have not only honed her skills but also expanded her understanding of various musical genres and styles.</p>
+            <p>Online, Ann Marie is better known as Ann Marie Wisnofsky, embracing the power of the digital world to extend her reach and impact as a music educator. Her online presence allows her to connect with students from diverse backgrounds and locations, inspiring and nurturing their musical talents through virtual piano lessons.</p>
+            <p>Additionally, her remarkable contributions to the music community have earned her a place in the esteemed Douglas Moore list, further validating her standing as a respected and influential figure in the field of music education.</p>
+            <p>As she continues her journey as a piano teacher, Ann Marie Ohern remains committed to instilling a love for music in each of her students, fostering a supportive and nurturing learning environment. Her dedication to the craft, paired with her vast experience and association with musical legends, makes her an exceptional choice for aspiring pianists seeking to explore the world of music under the guidance of a true maestro. Whether you're a beginner or an advanced musician, Ann Marie's lessons promise to be transformative, helping you unlock your full musical potential and set you on a path to excellence in the world of piano playing.</p>
+                      <img src="https://i.ibb.co/BzXkKMw/image.jpg" alt="Ann M Ohern">
 
-<p>For half a century, Ann Marie Ohern has been dedicated to the art of teaching music, sharing her passion, knowledge, and expertise with countless students. With a vast array of experiences and insights gained over the years, she has become a true guiding light for aspiring musicians.</p>
-
-<p>Throughout her illustrious career, Ann Marie has had the privilege of collaborating with a host of notable personalities, further enriching her musical prowess. Some of the famous names she has worked with include Ann Elgar, a gifted composer; Frances Bible, an outstanding pianist; Lila Herbert, a renowned soprano; Placido Domingo, the iconic opera singer; and Walter Chesterton, a celebrated conductor. These partnerships have not only honed her skills but also expanded her understanding of various musical genres and styles.</p>
-
-<p>Online, Ann Marie is better known as Ann Marie Wisnofsky, embracing the power of the digital world to extend her reach and impact as a music educator. Her online presence allows her to connect with students from diverse backgrounds and locations, inspiring and nurturing their musical talents through virtual piano lessons.</p>
-
-<p>Additionally, her remarkable contributions to the music community have earned her a place in the esteemed Douglas Moore list, further validating her standing as a respected and influential figure in the field of music education.</p>
-
-<p>As she continues her journey as a piano teacher, Ann Marie Ohern remains committed to instilling a love for music in each of her students, fostering a supportive and nurturing learning environment. Her dedication to the craft, paired with her vast experience and association with musical legends, makes her an exceptional choice for aspiring pianists seeking to explore the world of music under the guidance of a true maestro. Whether you're a beginner or an advanced musician, Ann Marie's lessons promise to be transformative, helping you unlock your full musical potential and set you on a path to excellence in the world of piano playing.</p>
-
-<img src="https://i.ibb.co/BzXkKMw/image.jpg" style="display: block; margin: 0 auto;">
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="lessons">
-      <h2>Piano Lessons</h2>
-      <p>
-Welcome to AMO Music's Piano Lessons! In our piano lessons, you will learn how to read, finger, and play classical music with proper techniques. The lessons are structured as half-hour weekly sessions, providing regular and consistent learning opportunities. Our curriculum is tailored to suit each student's ability, and if you have experience playing a flute or any other instrument in the past, it may influence the course content. We welcome students of all ages, whether you are a beginner or have prior musical experience. The only equipment requirement for our piano lessons is a piano or keyboard. As for pricing, please contact us directly to discuss the details. Scheduling is flexible, and you can get in touch with us to find a suitable time for your lessons. Our registration process is simple, and you don't need to pay in advance. If you have any questions or concerns, don't hesitate to reach out to us. We are here to guide you on your musical journey. Join us for an enriching experience and let the magic of piano music unfold!
-      </p>
+      <div class="container">
+        <h2>Piano Lessons</h2>
+        <p>
+          Welcome to AMO Music's Piano Lessons! In our piano lessons, you will learn how to read, finger, and play classical music with proper techniques. The lessons are structured as half-hour weekly sessions, providing regular and consistent learning opportunities. Our curriculum is tailored to suit each student's ability, and if you have experience playing a flute or any other instrument in the past, it may influence the course content. We welcome students of all ages, whether you are a beginner or have prior musical experience. The only equipment requirement for our piano lessons is a piano or keyboard. As for pricing, please contact us directly to discuss the details. Scheduling is flexible, and you can get in touch with us to find a suitable time for your lessons. Our registration process is simple, and you don't need to pay in advance. If you have any questions or concerns, don't hesitate to reach out to us. We are here to guide you on your musical journey. Join us for an enriching experience and let the magic of piano music unfold!
+        </p>
+      </div>
     </section>
 
     <section id="contact">
-      <h2>Contact Us</h2>
-      <p>
-        For inquiries and bookings, please contact us via email or phone.
-      </p>
-      <a href="mailto:annpiano43@optonline.net">Send us an email at annpiano43@optonline.net</a>
-     <br><br> <a href="tel:+19734616285">Call us at +1 973-461-6285</a>
+      <div class="container">
+        <h2>Contact Us</h2>
+        <p>
+          For inquiries and bookings, please contact us via email or phone.
+        </p>
+        <a href="mailto:annpiano43@optonline.net">Send us an email at annpiano43@optonline.net</a>
+        <br><br> 
+        <a href="tel:+19734616285">Call us at +1 973-461-6285</a>
+      </div>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2023 AMO Music. All rights reserved.</p>
+    <div class="container text-center">
+      <p>&copy; 2023 AMO Music. All rights reserved.</p>
+    </div>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- Add Bootstrap and jQuery scripts (required for Bootstrap) at the end of the body -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
